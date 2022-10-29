@@ -1,26 +1,69 @@
-import React, { useContext } from "react";
+import React, { useState, useEffect, useContext } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { Context } from "../store/appContext";
-import rigoImageUrl from "../../img/rigo-baby.jpg";
-import "../../styles/home.css";
+
+import "../../styles/sign-in.css";
+
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 export const Home = () => {
-	const { store, actions } = useContext(Context);
+  const { actions, store } = useContext(Context);
+  const navigate = useNavigate();
 
-	return (
-		<div className="text-center mt-5">
-			<h1>Hello Rigo!!</h1>
-			<p>
-				<img src={rigoImageUrl} />
-			</p>
-			<div className="alert alert-info">
-				{store.message || "Loading message from the backend (make sure your python backend is running)..."}
-			</div>
-			<p>
-				This boilerplate comes with lots of documentation:{" "}
-				<a href="https://github.com/4GeeksAcademy/react-flask-hello/tree/95e0540bd1422249c3004f149825285118594325/docs">
-					Read documentation
-				</a>
-			</p>
-		</div>
-	);
+  const [show, setShow] = useState(true);
+  const [show2, setShow2] = useState(true);
+
+  const toggleBtn = () => {
+    setShow((prevState) => !prevState);
+  };
+
+  const toggle2Btn = () => {
+    setShow2((prevState) => !prevState);
+  };
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  });
+
+  return (
+    <div className="register">
+      <div className="login-container">
+        <div className="signup">
+          <h1 className="fw-bold">Create an account</h1>
+          <form onSubmit={e => actions.signup(e, navigate)}>
+            <div className="form-floating">
+              <input
+                type="email"
+                placeholder="Email"
+                name="email"
+                className="form-control floatingInput"
+                autoComplete="off"
+                value={store.currentUser?.email}
+                onChange={e => actions.handleChange(e)}
+              />
+              <label className="floatingInput">Email</label>
+            </div>
+            <div className="form-floating">
+              <input
+                type="password"
+                placeholder="Password"
+                name="password"
+                className="form-control floatingPassword"
+                autoComplete="off"
+                value={store.currentUser?.password}
+                onChange={e => actions.handleChange(e)}
+              />
+              <label className="floatingPassword">Password</label>
+            </div>
+            <div className="sign-up-btn">
+              <input type="submit" value="Create Account" />
+            </div>
+            <small>
+              Already have an account? <Link to="/sign-in"><label>Sign In</label></Link>
+            </small>
+          </form>
+        </div>
+      </div>
+    </div>
+  );
 };
