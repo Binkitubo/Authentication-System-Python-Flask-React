@@ -1,7 +1,5 @@
 # Authentication system with Python, Flask and React.js
 
-## FAQ
-
 ### Back-End Installation:
 
 It is recomended to install the backend first, make sure you have Python 3.8, Pipenv and a database engine (Posgress recomended)
