@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Context } from "../store/appContext";
 
@@ -17,39 +17,33 @@ export const SignIn = () => {
             "You are logged in with this token" + store.token
           ) : (
             <form onSubmit={e => actions.login(e, navigate)}>
-              <p>Enter your info</p>
               <div className="form-floating">
                 <input
                   type="email"
                   placeholder="Email"
                   name="email"
-                  className="form-control floatingInput"
+                  className="form-control"
                   autoComplete="off"
                   value={store.currentUser?.email}
                   onChange={(e) => actions.handleChange(e)}
                 />
                 <label className="floatingInput">Email</label>
               </div>
-              <div className="form-floating d-flex">
+              <div className="form-floating">
                 <input
                   type="password"
                   placeholder="Password"
                   name="password"
-                  className="form-control floatingPassword"
+                  className="form-control"
                   autoComplete="off"
                   value={store.currentUser?.password}
                   onChange={(e) => actions.handleChange(e)}
                 />
-                <label className="floatingPassword mt-2">Password </label>
+                <label className="floatingInput">Password </label>
               </div>
-              <div className="forgot">
-                <Link to="/forgot-password" className="small">
-                  <small>Forgot Password?</small>
-                </Link>
-              </div>
-              <input type="submit" value="Sign In" />
+              <input type="submit" value="Sign In" className="btn btn-primary"/>
               <small>
-                Don't have an account? <Link to="/"><label>Sign Up</label></Link>
+                Don't have an account? <Link to="/signup"><label>Sign Up</label></Link>
               </small>
             </form>
           )}

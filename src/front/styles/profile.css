@@ -1,25 +1,21 @@
 .form {
   position: relative;
   margin: auto;
-  padding-bottom: 10rem;
-  font-family: "Rajdhani", sans-serif;
-  background-color: #000;
 }
 
 .profile-card {
   position: relative;
   display: flex;
   flex-direction: column;
-  min-width: 0;
-  background-clip: border-box;
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  border-radius: 1rem;
-  backdrop-filter: blur(2px);
 }
 
 .profile-card form {
-  padding: 3rem 2rem 4rem;
+  padding: 0 1.5rem 0 1rem;
+}
+
+.title {
+  margin: 2rem;
+  text-align: center;
 }
 
 .form_box_input {
@@ -39,123 +35,75 @@
   font-size: 1.3rem;
 }
 
-.form_box_input_userName,
 .form_box_input_name,
-.form_box_input_lastName,
-.form_box_input_phoneNumber {
+.form_box_input_lastName {
   margin-top: 0.5rem;
   padding: 10px;
   font-size: 1.25rem;
-  outline: none;
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  border-radius: 0.5rem;
-  background: rgba(255, 255, 255, 0.15);
-  color: white;
 }
 
 .form_box_input_box {
   margin-top: 0.5rem;
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  border-radius: 0.5rem;
+  width: 50%;
   align-items: center;
   display: flex;
   overflow: hidden;
 }
 
-.form_box_input_box_icon {
-  font-size: 38px;
-  background-image: linear-gradient(to bottom right, #aeffb9 0%, #a091ff 100%);
-  padding: 0.5rem 1rem;
-  color: #fff;
-  display: grid;
-  cursor: pointer;
+.form_box_input_box {
+  margin-top: 0.5rem;
+  width: 50%;
+  align-items: center;
+  display: flex;
+  overflow: hidden;
 }
 
 .form_box_input_box input {
-  border: 0;
-  border-radius: 0;
-  font-size: 1.25rem;
-  background: rgba(255, 255, 255, 0.15);
-  outline: none;
-}
-
-.form_box_input_social {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
-}
-
-.profile-btn input, 
-.profile-btn label {
-  padding: 10px;
-  font-size: 1em;
-  outline: none;
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  border-radius: 0.5rem;
-  background: rgba(255, 255, 255, 0.15);
-  color: white;
-}
-
-.profile-btn input[type="submit"],
-.profile-btn label {
-  width: 100px;
-  font-size: 1.2rem;
-  font-weight: bold;
-  text-transform: uppercase;
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  border-radius: 0.5rem;
-  background: rgba(255, 255, 255, 0.15);
-}
-
-.profile-btn input[type="submit"]:hover,
-.profile-btn label:hover {
-  background-image: linear-gradient(to bottom right, #aeffb9 0%, #a091ff 100%);
-  color: black;
-  font-weight: bold;
-}
-
-.profile-btn label {
-  cursor: pointer;
-  margin-right: 1rem;
-}
-
-.update-profile-btn input {
-  width: 170px;
-  margin-top: 3rem;
-  padding: 10px;
-  font-size: 1.2rem;
-  font-weight: bold;
-  text-transform: uppercase;
-  outline: none;
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  border-radius: 0.5rem;
-  background: rgba(255, 255, 255, 0.15);
-  color: white;
-}
-
-.update-profile-btn input:hover {
-  background-image: linear-gradient(to bottom right, #aeffb9 0%, #a091ff 100%);
-  color: black;
-  font-weight: bold;
+  padding: 1rem;
+  font-size: 1.3rem
 }
 
 .img-size img {
-  max-width: 200px;
-  max-height: 200px;
+  width: 250px;
+  height: 250px;
+  margin-left: 5rem;
+  object-fit: cover;
+  border: 3px solid rgb(0, 0, 0);
 }
 
-.hidden {
-  display: none;
+.logout {
+  width: 300px;
+  text-align: center;
 }
 
-@media screen and (max-width: 35em) {
-  .form_box_input_social {
-    grid-template-columns: 1fr;
+.logout input {
+  position: relative;
+  top: 50%;
+  bottom: 50%;
+  right: 50%;
+  left: 50%;
+  font-size: 1.3rem;
+  width: 200px;
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
+@media (min-width: 375px) and (max-width: 412px) {
+  .form_box_input_box {
+    width: 100%;
   }
-}
-
-@media screen and (min-width: 425px) and (max-width: 768px) {
-  .form_box_input_social {
-    grid-template-columns: 1fr 1fr;
+  .img-size img {
+    margin-left: 0;
+  }
+  .logout input {
+    position: relative;
+    top: 50%;
+    bottom: 50%;
+    right: 0;
+    left: 15%;
+    font-size: 1.3rem;
+    width: 200px;
+    padding: 1rem;
+    margin-top: 1rem;
   }
 }

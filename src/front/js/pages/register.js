@@ -1,29 +1,12 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Context } from "../store/appContext";
 
 import "../../styles/sign-in.css";
 
-import { FaEye, FaEyeSlash } from "react-icons/fa";
-
-export const Home = () => {
+export const Register = () => {
   const { actions, store } = useContext(Context);
   const navigate = useNavigate();
-
-  const [show, setShow] = useState(true);
-  const [show2, setShow2] = useState(true);
-
-  const toggleBtn = () => {
-    setShow((prevState) => !prevState);
-  };
-
-  const toggle2Btn = () => {
-    setShow2((prevState) => !prevState);
-  };
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  });
 
   return (
     <div className="register">
@@ -55,11 +38,11 @@ export const Home = () => {
               />
               <label className="floatingPassword">Password</label>
             </div>
-            <div className="sign-up-btn">
-              <input type="submit" value="Create Account" />
-            </div>
+
+            <input type="submit" value="Create Account" className="btn btn-primary" />
+            
             <small>
-              Already have an account? <Link to="/sign-in"><label>Sign In</label></Link>
+              Already have an account? <Link to="/"><label>Sign In</label></Link>
             </small>
           </form>
         </div>

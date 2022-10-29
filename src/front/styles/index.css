@@ -1,3 +1,5 @@
-/* 
-    General Styles used on every website (Don't Repeat Yourself)
-*/
+body {
+    background-image: url(https://www.ucps.k12.nc.us/cms/lib/NC01910453/Centricity/Template/GlobalAssets/images///backgroundphoto/Background-White-2.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+}
